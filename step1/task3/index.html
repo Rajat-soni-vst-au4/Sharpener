@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>li tag</title>
+</head>
+<body>
+    <ul class="items">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+
+    <script>
+        let items = document.querySelector(".items");
+
+        items.firstElementChild.textContent = "HELLO";
+        items.firstElementChild.style.color = "Green";
+
+        items.children[1].textContent = "SECOND";
+        items.children[1].style.color = "Yellow";
+    </script>
+</body>
+</html>
