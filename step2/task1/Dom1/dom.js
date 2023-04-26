@@ -14,3 +14,6 @@ items[2].style.backgroundColor = "green";
 for(let i=0; i<items.length; i++){
     items[i].style.fontWeight = "bold";
 }
+
+items[1].style.backgroundColor = "green";
+items[2].style.display = "none";
