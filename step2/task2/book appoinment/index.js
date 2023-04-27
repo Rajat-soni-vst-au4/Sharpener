@@ -9,10 +9,24 @@ form.addEventListener("submit", onsubmit);
 function onsubmit(e){
 e.preventDefault();
 
-localStorage.setItem("name", name.value)
-localStorage.setItem("email", email.value)
-localStorage.setItem("number", number.value)
-localStorage.setItem("Date&time", date.value +"&"+ time.value)
+let Data = {
+    "name": name.value,
+    "email": email.value,
+    "number": number.value,
+"Date&time": date.value +"&"+ time.value,
+}
+// localStorage.setItem("name", name.value)
+// localStorage.setItem("email", email.value)
+// localStorage.setItem("number", number.value)
+// localStorage.setItem("Date&time", date.value +"&"+ time.value)
 
-alert("Your information has been shared and you'll get call soon.")
+var array = JSON.parse(localStorage.getItem('Data') || '[]');
+array.push(Data);
+localStorage.setItem('Data', JSON.stringify(array));
+
+
+console.log(array)
+
+// console.log(localStorage)
+// alert("Your information has been shared and you'll get call soon.")
 }
