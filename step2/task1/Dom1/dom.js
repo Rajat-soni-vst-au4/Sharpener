@@ -17,3 +17,5 @@ for(let i=0; i<items.length; i++){
 
 items[1].style.backgroundColor = "green";
 items[2].style.display = "none";
+
+console.log(title.parentNode)
