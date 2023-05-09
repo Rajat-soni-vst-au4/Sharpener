@@ -23,20 +23,26 @@ var Data = {
 
        try {
         axios.post("https://crudcrud.com/api/d60d961c83ee474abf714213b4bffdf5/appoinmentsdata", Data)
-            .then(data => console.log(data.data))
+            // .then(data => showUser(data.data))
        } catch (error) {
             console.log(err)
        }
-    // showUser(array)
+    showUser()
 }
 
 //adding datalist of appoinments
 
-function showUser(array){
+function showUser(){
+    try {
+         axios.get("https://crudcrud.com/api/d60d961c83ee474abf714213b4bffdf5/appoinmentsdata")
+            .then(array => console.log(array.data))
+    } catch (error) {
+            console.log(err)
+    }
     var a = 0
-    for(let i=a; i<array.length; i++){
+    for(let i=a; i<array.data.length; i++){
         let newElem = document.createElement("li");
-        newElem.textContent = array[i].name +"   -   "+ array[i].email + "   -   "+ array[i].number + "   -   " + array[i].Date + "           ";
+        newElem.textContent = array.data[i].name +"   -   "+ array.data[i].email + "   -   "+ array.data[i].number + "   -   " + array[i].Date + "           ";
         
         //delete button added
         let button = document.createElement("input");
@@ -44,7 +50,6 @@ function showUser(array){
         button.value = "Delete";
         button.addEventListener("click", function (){
             items.removeChild(newElem)
-            localStorage.removeItem(array[i])
        
         } )
 
@@ -54,13 +59,13 @@ function showUser(array){
         edit.value = "edit";
         edit.addEventListener("click", function(){
             items.removeChild(newElem)
-            localStorage.removeItem(array[i])
+      
         })
 
         newElem.append(button,edit)
         items.appendChild(newElem)
         } 
       
-        a = array.length-1
+        a = array.data.length-1
     }
    
