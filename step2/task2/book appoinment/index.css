@@ -1,0 +1,25 @@
+body{
+    /* margin: 30px 15%; */
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#form{
+    margin-left: 15%;
+    margin-top: 30px;
+    border:6px solid rgb(6, 89, 61);
+    box-shadow: 3px 3px 3px 3px whitesmoke;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+}
+#list{
+    margin-right: 15%;
+    margin-top: 30px;
+    border:6px solid rgb(6, 89, 61);
+    box-shadow: 3px 3px 3px 3px whitesmoke;
+    height: 500px;
+    width: 800px;
+    text-align: center;
+}
