@@ -14,7 +14,7 @@ form.addEventListener("submit", onsubmit);
 function onsubmit(e){
 e.preventDefault();
 items
-let Data = {
+var Data = {
     "name": name.value,
     "email": email.value,
     "number": number.value,
@@ -36,17 +36,29 @@ function showUser(array){
     for(let i=a; i<array.length; i++){
         let newElem = document.createElement("li");
         newElem.textContent = array[i].name +"   -   "+ array[i].email + "   -   "+ array[i].number + "   -   " + array[i].Date + "           ";
+        
+        //delete button added
         let button = document.createElement("input");
         button.type = "button"
         button.value = "Delete";
         button.addEventListener("click", function (){
-            localStorage.removeItem(array[i].name)
             items.removeChild(newElem)
+            localStorage.removeItem(array[i])
+       
         } )
-        newElem.append(button)
+
+        //edit button added
+        let edit = document.createElement("input");
+        edit.type = "button"
+        edit.value = "edit";
+        edit.addEventListener("click", function(){
+            items.removeChild(newElem)
+            localStorage.removeItem(array[i])
+        })
+
+        newElem.append(button,edit)
         items.appendChild(newElem)
         } 
-
       
         a = array.length-1
     }
