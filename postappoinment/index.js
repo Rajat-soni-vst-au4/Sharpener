@@ -6,8 +6,7 @@ let date = document.querySelector("#date")
 let time = document.querySelector("#time");
 
 
-var items = document.querySelector(".items"
-)
+var items = document.querySelector(".items")
 
 //submit button action's
 form.addEventListener("submit", onsubmit);
