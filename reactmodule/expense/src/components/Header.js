@@ -34,11 +34,14 @@ const Header =()=> {
   //   React.createElement('h2', {}, "Let's get started!"),
   //   React.createElement(Expenses, { items: expenses })
   // );
-
+    const addExpenseHandler = expense => {
+      const data = [...expenses,expense]
+      console.log(data)
+    }
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseForm/>
+      <ExpenseForm onAddExpense={addExpenseHandler}/>
       <ExpensesList items={expenses} />
     </div>
   );
