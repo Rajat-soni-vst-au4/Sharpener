@@ -1,5 +1,6 @@
 import React from 'react'
 import ExpensesList from './Expenses/ExpenseList';
+import ExpenseForm from './Form/ExpenseForm';
 
 const Header =()=> {
   const expenses = [
@@ -37,6 +38,7 @@ const Header =()=> {
   return (
     <div>
       <h2>Let's get started!</h2>
+      <ExpenseForm/>
       <ExpensesList items={expenses} />
     </div>
   );
