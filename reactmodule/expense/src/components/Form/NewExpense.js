@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ExpenseForm(props) {
+function NewExpense(props) {
     //save and trigger data
   const [newtitle, setNewtitle] = useState("");
   const [newamount, setNewamount] = useState("");
@@ -66,4 +66,4 @@ function ExpenseForm(props) {
   );
 }
 
-export default ExpenseForm;
+export default NewExpense;

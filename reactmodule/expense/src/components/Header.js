@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import ExpensesList from './Expenses/ExpenseList';
-import ExpenseForm from './Form/ExpenseForm';
+import React, {useState} from 'react';
+import Expenses from './Expenses/Expenses';
+import NewExpense from './Form/NewExpense';
 
 
   const DummyExpense = [
@@ -27,10 +27,10 @@ import ExpenseForm from './Form/ExpenseForm';
       location: "Delhi",
     },
   ];
+  
   const Header =()=> {
     const [expenses, setExpenses] = useState(DummyExpense)
     
-
     const addExpenseHandler = expense => {
       setExpenses([expense, ...expenses])
     }
@@ -43,9 +43,9 @@ import ExpenseForm from './Form/ExpenseForm';
   // );
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <ExpenseForm onAddExpense={addExpenseHandler}/>
-      <ExpensesList items={expenses} />
+      <h2>Track Your Expenses</h2>
+      <NewExpense onAddExpense={addExpenseHandler}/>
+      <Expenses items={expenses} />
     </div>
   );
 }
