@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ExpensesList from './Expenses/ExpenseList';
 import ExpenseForm from './Form/ExpenseForm';
 
-const Header =()=> {
-  const expenses = [
+
+  const DummyExpense = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -27,17 +27,20 @@ const Header =()=> {
       location: "Delhi",
     },
   ];
+  const Header =()=> {
+    const [expenses, setExpenses] = useState(DummyExpense)
+    
 
-  // return React.createElement(
+    const addExpenseHandler = expense => {
+      setExpenses([expense, ...expenses])
+    }
+
+   // return React.createElement(
   //   'div',
   //   {},
   //   React.createElement('h2', {}, "Let's get started!"),
   //   React.createElement(Expenses, { items: expenses })
   // );
-    const addExpenseHandler = expense => {
-      const data = [...expenses,expense]
-      console.log(data)
-    }
   return (
     <div>
       <h2>Let's get started!</h2>
