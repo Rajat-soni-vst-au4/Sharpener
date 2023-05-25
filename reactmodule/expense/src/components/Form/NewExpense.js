@@ -16,7 +16,13 @@ function NewExpense(props) {
     setNewamount(e.target.value);
   };
   const dateChangeHandler = (e) => {
-    setNewdate(e.target.value);
+    let d = e.target.value
+    // var parts ='2014-04-03'.split('-');
+    // var mydate = new Date(parts[0], parts[1] - 1, parts[2]); 
+    // console.log("h", mydate.toDateString());
+    // console.log(d)
+    setNewdate(d);
+    
   };
   const locationChangeHandler=(event)=>{
     setNewlocation(event.target.value);
@@ -28,14 +34,16 @@ function NewExpense(props) {
     const collenctionData = {
       title: newtitle,
       amount: newamount,
-      date: newdate,
+      date: new Date(newdate),
     };
+
     //invoke save data fn
     saveData(collenctionData);
     setNewtitle("");
     setNewamount("");
     setNewdate("");
   }
+
   //fn making a set with collenctionData + random id
   function saveData(collenctionData){
     const expenseData= {
