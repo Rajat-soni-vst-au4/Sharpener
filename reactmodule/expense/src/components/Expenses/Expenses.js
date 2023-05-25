@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ExpensesFilter from "./ExpensesFilter";
-import ExpenseItem from "./ExpenseItem";
+import ExpensesChart from "./ExpensesChart"
 import Card from "../UI/Card";
 import ExpensesList from "./ExpensesList";
 import "./Expenses.css";
@@ -22,8 +22,10 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filteresChangeHandler}
       />
+       <ExpensesChart expenses={filteredExpenses}/>
       {filteredExpenses.length===1 && <h2 className='expenses-list__fallback'>Only single Expense here Please add more...</h2>} 
-      
+     
+         
       <ExpensesList items={filteredExpenses} />
     </Card>
   );
