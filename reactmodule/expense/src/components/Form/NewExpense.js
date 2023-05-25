@@ -8,6 +8,7 @@ function NewExpense(props) {
   const [newdate, setNewdate] = useState("");
   const [newlocation, setNewlocation]=useState("");
   
+  const [isFormCanceled, setIsFormCanceled] = useState(false);
 
   const titleChangeHandler = (e) => {
     setNewtitle(e.target.value);
@@ -54,6 +55,22 @@ function NewExpense(props) {
     props.onAddExpense(expenseData)
    
  }
+ const cancelHandler = () => {
+  setNewdate('');
+  setNewtitle('');
+  setNewamount('');
+  setNewlocation('')
+  setIsFormCanceled(true);
+};
+
+ if (isFormCanceled) {
+  return (
+    <div>
+      <button onClick={() => setIsFormCanceled(false)} className='new-expense__actions'>Add new expense</button>
+    </div>
+  );
+}
+
   return (
     <>
       <form onSubmit={collenction}>
@@ -92,7 +109,7 @@ function NewExpense(props) {
             </div>
         </div>
         <div className='new-expense__actions'>
-            <button type="button" >Cancel</button>
+            <button type="button" onClick={cancelHandler}>Cancel</button>
             <button type="submit">Add Expense</button>
         </div>
       </form>
