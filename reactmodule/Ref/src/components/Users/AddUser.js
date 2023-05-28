@@ -34,6 +34,9 @@ const AddUser = (props) => {
       return;
     }
     props.onAddUser(nameValue, ageValue,collegeValue);
+      nameInputRef.current.value = ""
+      ageInputRef.current.value = ""
+      collegeInputRef.current.value = ""
 
   };
 
